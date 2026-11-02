@@ -8,7 +8,6 @@
   <!-- Resource Pre-connections for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://images.unsplash.com">
   
   <!-- Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,800;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1800,36 +1799,36 @@
     // ==========================================================================
     const MENU_DATA = [
       // KOPI (8 items)
-      { id: 'k1', name: 'Es Kopi Susu Djeroe', desc: 'Espresso double shot, susu segar, dan gula aren organik khas Djeroe.', price: '28K', cat: 'Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '☕', img: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k2', name: 'Kopi Tubruk Jero', desc: 'Seduhan tradisional biji Robusta dampit, pekat, harum, dan berkarakter.', price: '18K', cat: 'Kopi', tag: 'Klasik', note: 'Hangat', em: '🫖', img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k3', name: 'V60 Single Origin', desc: 'Biji pilihan Nusantara (Gayo / Ijen / Toraja), seduh manual sabar.', price: '32K', cat: 'Kopi', tag: 'Signature', note: 'Manual Brew', em: '⚗️', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k4', name: 'Flat White', desc: 'Dua shot ristretto dengan microfoam susu lembut yang seimbang.', price: '30K', cat: 'Kopi', tag: 'Signature', note: 'Hangat', em: '🥛', img: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k5', name: 'Americano On Rocks', desc: 'Double espresso disajikan di atas es batu, segar dan bersih di tenggorokan.', price: '22K', cat: 'Kopi', tag: '', note: 'Dingin / Hangat', em: '🧊', img: 'https://images.unsplash.com/photo-1551030173-122aabc4489c?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k6', name: 'Cold Brew Senja', desc: 'Fermentasi dingin 16 jam, aroma buah persik, aftertaste manis alami.', price: '32K', cat: 'Kopi', tag: 'Signature', note: 'Dingin Segar', em: '⏳', img: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k7', name: 'Caramel Macchiato', desc: 'Espresso harum berpadu sirup vanilla dan siraman saus karamel gurih.', price: '34K', cat: 'Kopi', tag: 'Favorit', note: 'Dingin / Hangat', em: '🍯', img: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=420&auto=format&fit=crop&q=75' },
-      { id: 'k8', name: 'Affogato Klasik', desc: 'Satu scoop gelato vanila artisan disiram espresso pekat panas.', price: '26K', cat: 'Kopi', tag: '', note: 'Dessert Kopi', em: '🍨', img: 'https://images.unsplash.com/photo-1594911772125-07fc7a2d8d9f?w=420&auto=format&fit=crop&q=75' },
+      { id: 'k1', name: 'Es Kopi Susu Djeroe', desc: 'Espresso double shot, susu segar, dan gula aren organik khas Djeroe.', price: '28K', cat: 'Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '☕', img: 'assets/images/menu-k1.webp' },
+      { id: 'k2', name: 'Kopi Tubruk Jero', desc: 'Seduhan tradisional biji Robusta dampit, pekat, harum, dan berkarakter.', price: '18K', cat: 'Kopi', tag: 'Klasik', note: 'Hangat', em: '🫖', img: 'assets/images/menu-k2.webp' },
+      { id: 'k3', name: 'V60 Single Origin', desc: 'Biji pilihan Nusantara (Gayo / Ijen / Toraja), seduh manual sabar.', price: '32K', cat: 'Kopi', tag: 'Signature', note: 'Manual Brew', em: '⚗️', img: 'assets/images/menu-k3.webp' },
+      { id: 'k4', name: 'Flat White', desc: 'Dua shot ristretto dengan microfoam susu lembut yang seimbang.', price: '30K', cat: 'Kopi', tag: 'Signature', note: 'Hangat', em: '🥛', img: 'assets/images/menu-k4.webp' },
+      { id: 'k5', name: 'Americano On Rocks', desc: 'Double espresso disajikan di atas es batu, segar dan bersih di tenggorokan.', price: '22K', cat: 'Kopi', tag: '', note: 'Dingin / Hangat', em: '🧊', img: 'assets/images/menu-k5.webp' },
+      { id: 'k6', name: 'Cold Brew Senja', desc: 'Fermentasi dingin 16 jam, aroma buah persik, aftertaste manis alami.', price: '32K', cat: 'Kopi', tag: 'Signature', note: 'Dingin Segar', em: '⏳', img: 'assets/images/menu-k6.webp' },
+      { id: 'k7', name: 'Caramel Macchiato', desc: 'Espresso harum berpadu sirup vanilla dan siraman saus karamel gurih.', price: '34K', cat: 'Kopi', tag: 'Favorit', note: 'Dingin / Hangat', em: '🍯', img: 'assets/images/menu-k7.webp' },
+      { id: 'k8', name: 'Affogato Klasik', desc: 'Satu scoop gelato vanila artisan disiram espresso pekat panas.', price: '26K', cat: 'Kopi', tag: '', note: 'Dessert Kopi', em: '🍨', img: 'assets/images/menu-k8.webp' },
 
       // NON-KOPI (6 items)
-      { id: 'nk1', name: 'Es Jeruk Djeroe', desc: 'Jeruk peras lokal segar, madu murni hutan, dan daun mint petik sendiri.', price: '24K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin Segar', em: '🍊', img: 'https://images.unsplash.com/photo-1613478223719-2ab802602423?w=420&auto=format&fit=crop&q=75' },
-      { id: 'nk2', name: 'Matcha Gula Aren', desc: 'Matcha Uji Jepang berpadu susu creamy dan manis lembut aren.', price: '30K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '🍵', img: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=420&auto=format&fit=crop&q=75' },
-      { id: 'nk3', name: 'Cokelat Pekat Nusantara', desc: 'Kakao artisan Sulawesi 70%, rasa cokelat kental dan creamy rumahan.', price: '27K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '🍫', img: 'https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?w=420&auto=format&fit=crop&q=75' },
-      { id: 'nk4', name: 'Teh Susu Rempah', desc: 'Teh hitam seduh dengan kayu manis, kapulaga, dan jahe emprit bakar.', price: '25K', cat: 'Non-Kopi', tag: 'Signature', note: 'Hangat', em: '🧋', img: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=420&auto=format&fit=crop&q=75' },
-      { id: 'nk5', name: 'Berry Sparkler', desc: 'Campuran sari buah beri liar alami, lemon splash, dan soda dingin.', price: '26K', cat: 'Non-Kopi', tag: 'Favorit', note: 'Dingin Segar', em: '🍓', img: 'https://images.unsplash.com/photo-1556881286-fc6915169721?w=420&auto=format&fit=crop&q=75' },
-      { id: 'nk6', name: 'Earl Grey Lavender', desc: 'Seduhan teh earl grey beraroma lavender menenangkan dan citrus.', price: '24K', cat: 'Non-Kopi', tag: '', note: 'Hangat / Dingin', em: '🪻', img: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=420&auto=format&fit=crop&q=75' },
+      { id: 'nk1', name: 'Es Jeruk Djeroe', desc: 'Jeruk peras lokal segar, madu murni hutan, dan daun mint petik sendiri.', price: '24K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin Segar', em: '🍊', img: 'assets/images/menu-nk1.webp' },
+      { id: 'nk2', name: 'Matcha Gula Aren', desc: 'Matcha Uji Jepang berpadu susu creamy dan manis lembut aren.', price: '30K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '🍵', img: 'assets/images/menu-nk2.webp' },
+      { id: 'nk3', name: 'Cokelat Pekat Nusantara', desc: 'Kakao artisan Sulawesi 70%, rasa cokelat kental dan creamy rumahan.', price: '27K', cat: 'Non-Kopi', tag: 'Signature', note: 'Dingin / Hangat', em: '🍫', img: 'assets/images/menu-nk3.webp' },
+      { id: 'nk4', name: 'Teh Susu Rempah', desc: 'Teh hitam seduh dengan kayu manis, kapulaga, dan jahe emprit bakar.', price: '25K', cat: 'Non-Kopi', tag: 'Signature', note: 'Hangat', em: '🧋', img: 'assets/images/menu-nk4.webp' },
+      { id: 'nk5', name: 'Berry Sparkler', desc: 'Campuran sari buah beri liar alami, lemon splash, dan soda dingin.', price: '26K', cat: 'Non-Kopi', tag: 'Favorit', note: 'Dingin Segar', em: '🍓', img: 'assets/images/menu-nk5.webp' },
+      { id: 'nk6', name: 'Earl Grey Lavender', desc: 'Seduhan teh earl grey beraroma lavender menenangkan dan citrus.', price: '24K', cat: 'Non-Kopi', tag: '', note: 'Hangat / Dingin', em: '🪻', img: 'assets/images/menu-nk6.webp' },
 
       // CAMILAN (6 items)
-      { id: 'c1', name: 'Croissant Mentega', desc: 'Renyah berlapis di luar, lembut di dalam dengan mentega murni Prancis.', price: '26K', cat: 'Camilan', tag: 'Favorit', note: 'Fresh Baked', em: '🥐', img: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=420&auto=format&fit=crop&q=75' },
-      { id: 'c2', name: 'Pisang Goreng Keju', desc: 'Pisang kepok manis renyah dengan lelehan keju cheddar dan cokelat.', price: '22K', cat: 'Camilan', tag: 'Signature', note: 'Porsi Berbagi', em: '🍌', img: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=420&auto=format&fit=crop&q=75' },
-      { id: 'c3', name: 'Roti Bakar Djeroe', desc: 'Roti brioche tebal bakar arang, selai srikaya pandan & mentega gurih.', price: '24K', cat: 'Camilan', tag: 'Signature', note: 'Manis Gurih', em: '🍞', img: 'https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?w=420&auto=format&fit=crop&q=75' },
-      { id: 'c4', name: 'Kue Hari Ini', desc: 'Kreasi cake harian dari dapur Djeroe — tanyakan pada barista kami.', price: '28K', cat: 'Camilan', tag: '', note: 'Fresh Daily', em: '🍰', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=420&auto=format&fit=crop&q=75' },
-      { id: 'c5', name: 'Singkong Bawang Crispy', desc: 'Singkong empuk gurih berbumbu bawang ketumbar dengan sambal roa.', price: '20K', cat: 'Camilan', tag: 'Favorit', note: 'Gurih Renyah', em: '🥔', img: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=420&auto=format&fit=crop&q=75' },
-      { id: 'c6', name: 'Tahu Walik Krispi', desc: 'Tahu walik isi adonan ayam kenyal gurih, disajikan dengan kecap rawit.', price: '24K', cat: 'Camilan', tag: 'Signature', note: 'Pedas Gurih', em: '🥟', img: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=420&auto=format&fit=crop&q=75' },
+      { id: 'c1', name: 'Croissant Mentega', desc: 'Renyah berlapis di luar, lembut di dalam dengan mentega murni Prancis.', price: '26K', cat: 'Camilan', tag: 'Favorit', note: 'Fresh Baked', em: '🥐', img: 'assets/images/menu-c1.webp' },
+      { id: 'c2', name: 'Pisang Goreng Keju', desc: 'Pisang kepok manis renyah dengan lelehan keju cheddar dan cokelat.', price: '22K', cat: 'Camilan', tag: 'Signature', note: 'Porsi Berbagi', em: '🍌', img: 'assets/images/menu-c2.webp' },
+      { id: 'c3', name: 'Roti Bakar Djeroe', desc: 'Roti brioche tebal bakar arang, selai srikaya pandan & mentega gurih.', price: '24K', cat: 'Camilan', tag: 'Signature', note: 'Manis Gurih', em: '🍞', img: 'assets/images/menu-c3.webp' },
+      { id: 'c4', name: 'Kue Hari Ini', desc: 'Kreasi cake harian dari dapur Djeroe — tanyakan pada barista kami.', price: '28K', cat: 'Camilan', tag: '', note: 'Fresh Daily', em: '🍰', img: 'assets/images/menu-c4.webp' },
+      { id: 'c5', name: 'Singkong Bawang Crispy', desc: 'Singkong empuk gurih berbumbu bawang ketumbar dengan sambal roa.', price: '20K', cat: 'Camilan', tag: 'Favorit', note: 'Gurih Renyah', em: '🥔', img: 'assets/images/menu-c5.webp' },
+      { id: 'c6', name: 'Tahu Walik Krispi', desc: 'Tahu walik isi adonan ayam kenyal gurih, disajikan dengan kecap rawit.', price: '24K', cat: 'Camilan', tag: 'Signature', note: 'Pedas Gurih', em: '🥟', img: 'assets/images/menu-c6.webp' },
 
       // MAKANAN (4 items)
-      { id: 'm1', name: 'Nasi Goreng Rempah', desc: 'Nasi goreng harum rempah khas Djeroe, telur mata sapi, kerupuk & acar.', price: '36K', cat: 'Makanan', tag: 'Signature', note: 'Porsi Kenyang', em: '🍛', img: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=420&auto=format&fit=crop&q=75' },
-      { id: 'm2', name: 'Mie Godhog Djeroe', desc: 'Mie kuah kaldu ayam kampung kental gurih, suwiran ayam, sawi & telur.', price: '34K', cat: 'Makanan', tag: 'Signature', note: 'Hangat Berkuah', em: '🍜', img: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=420&auto=format&fit=crop&q=75' },
-      { id: 'm3', name: 'Nasi Ayam Bakar Madu', desc: 'Ayam bakar ungkep madu ketumbar, nasi pulen hangat, sambal terasi.', price: '38K', cat: 'Makanan', tag: 'Favorit', note: 'Lengkap Sambal', em: '🍗', img: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=420&auto=format&fit=crop&q=75' },
-      { id: 'm4', name: 'Iga Bakar Rempah Djeroe', desc: 'Iga sapi empuk bakar bumbu rempah manis gurih, kuah sup segar & sambal.', price: '48K', cat: 'Makanan', tag: 'Favorit', note: 'Porsi Kenyang', em: '🍖', img: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=420&auto=format&fit=crop&q=75' }
+      { id: 'm1', name: 'Nasi Goreng Rempah', desc: 'Nasi goreng harum rempah khas Djeroe, telur mata sapi, kerupuk & acar.', price: '36K', cat: 'Makanan', tag: 'Signature', note: 'Porsi Kenyang', em: '🍛', img: 'assets/images/menu-m1.webp' },
+      { id: 'm2', name: 'Mie Godhog Djeroe', desc: 'Mie kuah kaldu ayam kampung kental gurih, suwiran ayam, sawi & telur.', price: '34K', cat: 'Makanan', tag: 'Signature', note: 'Hangat Berkuah', em: '🍜', img: 'assets/images/menu-m2.webp' },
+      { id: 'm3', name: 'Nasi Ayam Bakar Madu', desc: 'Ayam bakar ungkep madu ketumbar, nasi pulen hangat, sambal terasi.', price: '38K', cat: 'Makanan', tag: 'Favorit', note: 'Lengkap Sambal', em: '🍗', img: 'assets/images/menu-m3.webp' },
+      { id: 'm4', name: 'Iga Bakar Rempah Djeroe', desc: 'Iga sapi empuk bakar bumbu rempah manis gurih, kuah sup segar & sambal.', price: '48K', cat: 'Makanan', tag: 'Favorit', note: 'Porsi Kenyang', em: '🍖', img: 'assets/images/menu-m4.webp' }
     ];
 
     const CAT_LABELS = {
@@ -2049,10 +2048,10 @@
     // 3. Ambiance (Suasana) Panels Setup
     // ==========================================================================
     panelsEl.innerHTML = [
-      ['Teras Pagi', 'Cahaya pertama, aroma kopi hangat, dan ketenangan pagi luar ruangan.', '#3a1f13', '#190b06', 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=900&auto=format&fit=crop&q=75'],
-      ['Ruang Dalam', 'Sudut tenang beraroma sangrai untuk kerja, membaca, dan fokus.', '#2e180e', '#120703', 'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&auto=format&fit=crop&q=75'],
-      ['Meja Panjang', 'Kayu jati tua, tempat obrolan hangat dan tawa bergulir bersama teman.', '#341b10', '#160a05', 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=900&auto=format&fit=crop&q=75'],
-      ['Sudut Senja', 'Lampu temaram senja, pekatnya kopi, dan cerita nostalgia di penghujung hari.', '#26130a', '#0a0402', 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=900&auto=format&fit=crop&q=75']
+      ['Teras Pagi', 'Cahaya pertama, aroma kopi hangat, dan ketenangan pagi luar ruangan.', '#3a1f13', '#190b06', 'assets/images/suasana-1.webp'],
+      ['Ruang Dalam', 'Sudut tenang beraroma sangrai untuk kerja, membaca, dan fokus.', '#2e180e', '#120703', 'assets/images/suasana-2.webp'],
+      ['Meja Panjang', 'Kayu jati tua, tempat obrolan hangat dan tawa bergulir bersama teman.', '#341b10', '#160a05', 'assets/images/suasana-3.webp'],
+      ['Sudut Senja', 'Lampu temaram senja, pekatnya kopi, dan cerita nostalgia di penghujung hari.', '#26130a', '#0a0402', 'assets/images/suasana-4.webp']
     ].map((p, i) => `
       <button class="panel" style="--c1:${p[2]};--c2:${p[3]}" aria-label="${p[0]}">
         <img class="panel-bg" src="${p[4]}" alt="${p[0]}" loading="lazy" decoding="async">

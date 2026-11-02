@@ -39,6 +39,7 @@
       box-sizing: inherit;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* ==========================================================================
@@ -65,6 +66,12 @@
       border: 0;
       cursor: pointer;
       text-decoration: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus, a:focus, input:focus {
+      outline: none;
     }
 
     @media (hover: hover) {
@@ -2162,14 +2169,11 @@
       const absY = Math.abs(dy);
       const s = scenes[cur];
 
-      // 1. Gesture swipe horizontal (geser kiri = halaman lanjut, geser kanan = kembali)
-      if (absX > 40 && absX > absY * 1.15) {
-        go(cur + (dx > 0 ? 1 : -1));
-        return;
-      }
+      // Abaikan jika gesture condong horizontal (kanan-kiri) agar tidak ganti halaman saat swipe navbar/tabs/konten
+      if (absX >= absY) return;
 
-      // 2. Gesture swipe vertikal
-      if (absY > 40) {
+      // Gesture swipe vertikal murni (atas = lanjut, bawah = kembali)
+      if (absY > 45) {
         if (s) {
           const scrollable = (s.scrollHeight - s.clientHeight) > 30;
           if (scrollable) {

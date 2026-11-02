@@ -558,18 +558,35 @@
       flex-wrap: wrap;
     }
 
-    .title span {
+    .title .letter {
+      position: relative;
       display: inline-block;
-      transition: transform .5s var(--e), color .3s;
+      cursor: pointer;
+      color: inherit;
       will-change: transform, color;
     }
 
-    .title span:hover {
-      transform: translateY(-.12em) rotate(-6deg) !important;
-      color: var(--accent) !important;
+    /* Buffer hitbox transparan agar kursor tidak lepas saat huruf terangkat */
+    .title .letter::after {
+      content: "";
+      position: absolute;
+      inset: -22px -8px;
+      z-index: 1;
     }
 
-    .scene.active .title span {
+    .title .char {
+      display: inline-block;
+      font-style: normal;
+      color: inherit;
+      transition: transform .4s var(--e), color .3s ease;
+      will-change: transform, color;
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Animasi gelombang otomatis berulang saat idle */
+    .scene.active .title .letter {
       animation: titleLetterWave 4.2s var(--e) infinite;
       animation-delay: calc(var(--li, 0) * .09s + .38s);
     }
@@ -580,6 +597,16 @@
       15% { transform: translateY(.02em) rotate(1.5deg); color: var(--accent); }
       22% { transform: translateY(0) rotate(0deg); color: inherit; }
       100% { transform: translateY(0) rotate(0deg); color: inherit; }
+    }
+
+    /* Hover sangat mulus: hentikan sementara wave pada huruf & angkat dengan transisi CSS murni */
+    .title .letter:hover {
+      animation-play-state: paused;
+    }
+
+    .title .letter:hover .char {
+      transform: translateY(-.15em) rotate(-6deg);
+      color: var(--accent);
     }
 
     .sub {
@@ -1749,7 +1776,7 @@
     navEl.innerHTML = names.map((n, i) => `<button data-go="${i}"><span>${n}</span><span>${n}</span></button>`).join('');
     sideEl.innerHTML = names.map((n, i) => `<button data-go="${i}" aria-label="${n}"></button>`).join('');
     mqEl.innerHTML = ('<span>Kopi Susu Djeroe</span><span>✦</span><span>Seduh dengan sabar</span><span>✦</span><span>Teman ngobrol</span><span>✦</span><span>Senja di dalam</span><span>✦</span>').repeat(4);
-    titleEl.innerHTML = [...'Djeroe'].map((c, i) => `<span style="--li:${i}">${c}</span>`).join('');
+    titleEl.innerHTML = [...'Djeroe'].map((c, i) => `<span class="letter" style="--li:${i}"><i class="char">${c}</i></span>`).join('');
 
     // Floating Ambient Beans (Generated Once)
     const stageEl = document.querySelector('.stage');

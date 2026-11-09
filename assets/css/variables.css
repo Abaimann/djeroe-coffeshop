@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Djeroe — Design Tokens & CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --bg: #120804;
+  --bg-gradient: radial-gradient(ellipse at 50% 20%, #2f170d 0%, #1c0e07 42%, #0c0503 78%, #050201 100%);
+  --fg: #f2e8dc;
+  --muted: #a39080;
+  
+  /* Surface & Card Colors (Rich opaque dark brown, eliminates expensive blur passes) */
+  --card: rgba(28, 14, 9, 0.92);
+  --card-hover: rgba(42, 22, 14, 0.98);
+  
+  /* Brand Accents */
+  --accent: #c87d46;
+  --accent2: #8c522a;
+  
+  /* Borders & Dividers */
+  --line: rgba(242, 232, 220, 0.12);
+  --line-strong: rgba(242, 232, 220, 0.22);
+  
+  /* Animation Easing */
+  --e: cubic-bezier(.22, 1, .36, 1);
+  
+  /* Typography Families */
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  
+  box-sizing: border-box;
+  color-scheme: dark;
+}

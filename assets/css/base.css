@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Djeroe — Global Reset, Typography, Stage & Ambient Effects
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-gradient) fixed;
+  color: var(--fg);
+  font-family: var(--sans);
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a, button {
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus, a:focus, input:focus {
+  outline: none;
+}
+
+@media (hover: hover) {
+  body, a, button {
+    cursor: none;
+  }
+}
+
+/* ==========================================================================
+   Typography & Common Containers
+   ========================================================================== */
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.kick {
+  font-size: .78rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5.6vw, 4.8rem);
+  line-height: 1;
+  letter-spacing: -.03em;
+  margin-bottom: 22px;
+}
+
+h2 em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 500;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+/* ==========================================================================
+   Ambient Background & Stage Effects (GPU Optimized)
+   ========================================================================== */
+.stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  contain: strict;
+}
+
+/* Ambient Orbs: Multi-stop radial gradients natively feathered to transparent,
+   eliminating heavy filter: blur(40px) on 75vmax layers and saving GPU VRAM */
+.orb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 75vmax;
+  height: 75vmax;
+  margin: -37.5vmax 0 0 -37.5vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%,
+    rgba(200, 125, 70, 0.28) 0%,
+    rgba(200, 125, 70, 0.20) 22%,
+    rgba(160, 95, 50, 0.12) 42%,
+    rgba(140, 82, 42, 0.06) 60%,
+    rgba(140, 82, 42, 0.015) 74%,
+    transparent 85%
+  );
+  opacity: .65;
+  filter: none;
+  transform: translate(var(--ox, 30vw), var(--oy, -10vh)) scale(var(--os, .7));
+  transition: transform 1.4s var(--e);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.orb.b {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50vmax;
+  height: 50vmax;
+  margin: -25vmax 0 0 -25vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    rgba(140, 82, 42, 0.22) 0%,
+    rgba(140, 82, 42, 0.14) 28%,
+    rgba(100, 55, 26, 0.07) 50%,
+    rgba(60, 30, 14, 0.02) 68%,
+    transparent 80%
+  );
+  opacity: .45;
+  filter: none;
+  transform: translate(var(--bx, -30vw), var(--by, 25vh)) scale(var(--bs, 1));
+  transition: transform 1.4s var(--e);
+  will-change: transform;
+  pointer-events: none;
+}
+
+.bean {
+  position: absolute;
+  width: 26px;
+  height: 38px;
+  border-radius: 50%;
+  background: #381d11;
+  opacity: .18;
+  animation: fl 9s ease-in-out infinite;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.bean::after {
+  content: "";
+  position: absolute;
+  left: 46%;
+  top: 6%;
+  width: 3px;
+  height: 88%;
+  background: #140804;
+  border-radius: 3px;
+  transform: rotate(14deg);
+}
+
+/* Film Grain: Lightweight static texture tiled via GPU texture hardware,
+   eliminates continuous SVG feTurbulence rasterization stall */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .04;
+  contain: strict;
+  background-image: url("../images/grain.webp");
+  background-repeat: repeat;
+  background-size: 64px 64px;
+}

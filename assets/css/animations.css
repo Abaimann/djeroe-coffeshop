@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Djeroe — Keyframe Animations & Reduced Motion Optimizations
+   ========================================================================== */
+
+/* 1. Floating Ambient Coffee Beans */
+@keyframes fl {
+  50% { transform: translateY(-28px) rotate(40deg); }
+}
+
+/* 2. Navigation Underline Reveal */
+@keyframes ul {
+  from { transform: scaleX(0); transform-origin: left; }
+}
+
+/* 3. Scroll Indicator Bob */
+@keyframes sc {
+  50% { background-position: 50% 18px; }
+}
+
+/* 4. Marquee Infinite Horizontal Scroll */
+@keyframes mq {
+  to { transform: translateX(-50%); }
+}
+
+/* 5. Page Wipe Transition Curtain */
+@keyframes wipe {
+  0% { transform: translateY(101%); }
+  40%, 60% { transform: translateY(0); }
+  100% { transform: translateY(-101%); }
+}
+
+/* 6. Page Wipe Title Logo */
+@keyframes wipeText {
+  0% { opacity: 0; transform: scale(.92) translateY(24px); }
+  40%, 60% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(1.04) translateY(-24px); }
+}
+
+/* 7. Interactive Hero Title Letter Wave */
+@keyframes titleLetterWave {
+  0% { transform: translateY(0) rotate(0deg); color: inherit; }
+  8% { transform: translateY(-.14em) rotate(-6deg); color: var(--accent); }
+  15% { transform: translateY(.02em) rotate(1.5deg); color: var(--accent); }
+  22% { transform: translateY(0) rotate(0deg); color: inherit; }
+  100% { transform: translateY(0) rotate(0deg); color: inherit; }
+}
+
+/* 8. Coffee Cup Floating Motion */
+@keyframes bob {
+  50% { transform: translateY(-16px) rotate(2deg); }
+}
+
+/* 9. Steam Path Rising Effect */
+@keyframes st {
+  0% { stroke-dashoffset: 60; opacity: 0; }
+  40% { opacity: .5; }
+  100% { stroke-dashoffset: -60; opacity: 0; transform: translateY(-20px); }
+}
+
+/* 10. Menu Card Entrance Pop */
+@keyframes pop {
+  from { opacity: 0; transform: translateY(24px) scale(.95); }
+}
+
+/* ==========================================================================
+   Accessibility & Reduced Motion
+   Properly terminates continuous GPU/CPU animation loops, prevents CPU churn,
+   and provides instant, accessible layouts for users with motion sensitivity.
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Terminate infinite animations completely to avoid 100Hz CPU spin */
+  .bean,
+  .cup,
+  .steam path,
+  .hint::before,
+  .marq div,
+  .scene.active .title .letter,
+  .card {
+    animation: none !important;
+  }
+
+  /* Staggered reveal elements should immediately appear */
+  [data-a] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Remove intrusive transition wipes and splash overlays */
+  .wipe {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .preloader {
+    display: none !important;
+    animation: none !important;
+  }
+
+  .orb,
+  .orb.b {
+    transition: none !important;
+  }
+}
